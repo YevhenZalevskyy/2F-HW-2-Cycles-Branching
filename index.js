@@ -12,17 +12,17 @@ do {
 do {
   M = +prompt('Enter integer M');
   if (Number.isInteger(M) && M != '') {1
-    if (M <= N) {
-      alert (`The number must be greater than ${N}. Try again`)
-    }
     continue;
   }
   alert ('It is not integer. Try again');
-} while (!Number.isInteger(M) || M == '' || M <= N);
+} while (!Number.isInteger(M) || M == '');
 
 isEven = confirm('Skip even numbers?')
 
-for (let i = N; i <= M; i++) {
+const minNum = Math.min(N, M);
+const maxNum = Math.max(N, M);
+
+for (let i = minNum; i <= maxNum; i++) {
   if (i % 2 === 0 && isEven) continue;
   sum += i;
 }
